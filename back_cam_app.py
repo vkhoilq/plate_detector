@@ -96,6 +96,16 @@ def image_input():
         return uploaded_file
     return None
 
+
+st.set_page_config(
+    page_title="Plate Detector",
+    page_icon="https://api.dicebear.com/5.x/bottts-neutral/svg?seed=gptLAb"#,
+    menu_items={"About": "Take a picture or upload a picture that has the plate number. If there is one, it will print out",
+                 "Get help": None, 
+                 "Report a Bug": None
+                }
+)
+
 image = image_input()
 if image:
     if st.button('Send To Server'):
