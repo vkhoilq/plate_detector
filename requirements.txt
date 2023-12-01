@@ -1,6 +1,8 @@
 # add the required pypi packages here that your app actually needs
+langchain
 streamlit
 pydantic
 pandas
 vnstock
 openpyxl
+openai
