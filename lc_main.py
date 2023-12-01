@@ -52,10 +52,14 @@ def load_prompt(topic):
 		]) # type: ignore
 	return prompt_template
 
+import os
+if "openai_api_key" in st.secrets:
+    os.environ['OPENAI_API_KEY'] = st.secrets.openai_api_key
+
 
 
 # Initialize LangSmith client
-client = Client()
+#client = Client()
 
 Math_Lesson = [
     "3.1 Multiplying and dividing by 0.1 and 0.01",
@@ -112,7 +116,8 @@ st.title(f"**{lesson_selection}**")
 
 # Message handling and interaction
 def send_feedback(run_id, score):
-    client.create_feedback(run_id, "user_score", score=score)
+    #client.create_feedback(run_id, "user_score", score=score)
+    pass
 
 for msg in st.session_state["messages"]:
     if isinstance(msg, HumanMessage):
